@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="search">
+                <field id="meilisearch_server_hostname" translate="label" type="text" sortOrder="61"
+                       showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch Server Hostname</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_server_port" translate="label" type="text" sortOrder="62" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch Server Port</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_index_prefix" translate="label" type="text" sortOrder="63" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch Index Prefix</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_enable_auth" translate="label" type="select" sortOrder="64" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Enable MeiliSearch HTTP Auth</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_username" translate="label" type="text" sortOrder="65" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch HTTP Username</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                        <field id="meilisearch_enable_auth">1</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_password" translate="label" type="text" sortOrder="66" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch HTTP Password</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                        <field id="meilisearch_enable_auth">1</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_server_timeout" translate="label" type="text" sortOrder="67" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>MeiliSearch Server Timeout</label>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+
+                <field id="meilisearch_test_connect_wizard" translate="button_label" sortOrder="68" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label/>
+                    <button_label>Test Connection</button_label>
+                    <frontend_model>Ubermanu\MeiliSearch\Block\Adminhtml\System\Config\TestConnection</frontend_model>
+                    <depends>
+                        <field id="engine">meilisearch</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

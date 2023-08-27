@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <catalog>
+            <search>
+                <engine>meilisearch</engine>
+                <meilisearch_server_hostname>localhost</meilisearch_server_hostname>
+                <meilisearch_server_port>7700</meilisearch_server_port>
+                <meilisearch_index_prefix>magento2</meilisearch_index_prefix>
+                <meilisearch_enable_auth>0</meilisearch_enable_auth>
+                <meilisearch_server_timeout>15</meilisearch_server_timeout>
+            </search>
+        </catalog>
+    </default>
+</config>
